@@ -1,5 +1,14 @@
 import 'package:flutter/material.dart';
 
+final ButtonStyle kFlatButtonStyle = TextButton.styleFrom(
+  primary: Colors.white,
+  minimumSize: Size(88, 36),
+  padding: EdgeInsets.symmetric(horizontal: 16.0),
+  shape: const RoundedRectangleBorder(
+    borderRadius: BorderRadius.all(Radius.circular(2.0)),
+  ),
+);
+
 const kTempTextStyle = TextStyle(
   fontFamily: 'Spartan MB',
   fontSize: 100.0,
