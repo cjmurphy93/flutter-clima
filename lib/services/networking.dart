@@ -4,7 +4,10 @@ import 'dart:convert' as convert;
 const openWeatherMapsApiKey = '540b7cfee5bdc9fdeb509bf037b0cc18';
 
 class NetworkHelper {
-  NetworkHelper(this.latitude, this.longitude);
+  NetworkHelper({
+    this.latitude,
+    this.longitude,
+  });
 
   final double latitude;
   final double longitude;

@@ -23,10 +23,10 @@ class _LoadingScreenState extends State<LoadingScreen> {
     Location location = Location();
     await location.getCurrentLocation();
 
-    latitude = location.latitude;
-    longitude = location.longitude;
-
-    NetworkHelper networkHelper = NetworkHelper(latitude, longitude);
+    NetworkHelper networkHelper = NetworkHelper(
+      latitude: location.latitude,
+      longitude: location.longitude,
+    );
 
     var weatherData = await networkHelper.getData();
 
