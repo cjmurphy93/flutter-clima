@@ -1,6 +1,7 @@
 import 'package:http/http.dart' as http;
 import 'dart:convert' as convert;
 
+//old key
 const openWeatherMapsApiKey = '540b7cfee5bdc9fdeb509bf037b0cc18';
 
 class NetworkHelper {
