@@ -21,31 +21,33 @@ class _LoadingScreenState extends State<LoadingScreen> {
   }
 
   void getData() async {
-    // var uriExample = Uri.parse(
-    //     'https://samples.openweathermap.org/data/2.5/weather?lat=35&lon=139&appid=439d4b804bc8187953eb36d2a8c26a02');
-    //
-    // http.Response response = await http.get(uriExample);
-    //
-    // if (response.statusCode == 200) {
-    //   String data = response.body;
-    //   var jsonResponse = convert.jsonDecode(response.body);
-    //   print(jsonResponse);
-    // } else {
-    //   print(response.statusCode);
-    // }
+    var uriExample = Uri.parse(
+        'https://samples.openweathermap.org/data/2.5/weather?lat=35&lon=139&appid=439d4b804bc8187953eb36d2a8c26a02');
 
-    //  another method:
-    Uri url = Uri.https(
-      'samples.openweathermap.org',
-      'data/2.5/weather',
-      {
-        'lat': '35',
-        'lon': '139',
-        'appid': '439d4b804bc8187953eb36d2a8c26a02',
-      },
-    );
-    http.Response response = await http.get(url);
-    print(response.body);
+    http.Response response = await http.get(uriExample);
+
+    if (response.statusCode == 200) {
+      String data = response.body;
+
+      var temperature = convert.jsonDecode(data)['main']['temp'];
+      var condition = convert.jsonDecode(data)['weather'][0]['id'];
+      var cityName = convert.jsonDecode(data)['name'];
+    } else {
+      print(response.statusCode);
+    }
+
+    //  another method without parsing:
+    // Uri url = Uri.https(
+    //   'samples.openweathermap.org',
+    //   'data/2.5/weather',
+    //   {
+    //     'lat': '35',
+    //     'lon': '139',
+    //     'appid': '439d4b804bc8187953eb36d2a8c26a02',
+    //   },
+    // );
+    // http.Response response = await http.get(url);
+    // print(response.body);
   }
 
   @override
