@@ -21,6 +21,7 @@ class NetworkHelper {
         'lat': '$latitude',
         'lon': '$longitude',
         'appid': '$openWeatherMapsApiKey',
+        'units': 'imperial',
       },
     );
 
