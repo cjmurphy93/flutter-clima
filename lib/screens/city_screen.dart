@@ -45,6 +45,12 @@ class _CityScreenState extends State<CityScreen> {
                     hintStyle: TextStyle(
                       color: Colors.grey,
                     ),
+                    border: OutlineInputBorder(
+                      borderRadius: BorderRadius.all(
+                        Radius.circular(10.0),
+                      ),
+                      borderSide: BorderSide.none,
+                    ),
                   ),
                 ),
               ),
