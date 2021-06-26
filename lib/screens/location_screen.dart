@@ -13,6 +13,23 @@ class LocationScreen extends StatefulWidget {
 }
 
 class _LocationScreenState extends State<LocationScreen> {
+  double temperature;
+  int condition;
+  String cityName;
+
+  @override
+  void initState() {
+    super.initState();
+
+    updateUI(widget.locationWeather);
+  }
+
+  void updateUI(dynamic weatherData) {
+    temperature = weatherData['main']['temp'];
+    condition = weatherData['weather'][0]['id'];
+    cityName = weatherData['name'];
+  }
+
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -80,8 +97,3 @@ class _LocationScreenState extends State<LocationScreen> {
     );
   }
 }
-
-//
-// double temperature = decodedData['main']['temp'];
-// int condition = decodedData['weather'][0]['id'];
-// String cityName = decodedData['name'];
